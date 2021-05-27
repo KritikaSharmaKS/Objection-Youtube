@@ -1,0 +1,24 @@
+{
+  "name": "objection-youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KritikaSharmaKS/Objection-Youtube.git"
+  },
+  "author": "Kritika Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KritikaSharmaKS/Objection-Youtube/issues"
+  },
+  "homepage": "https://github.com/KritikaSharmaKS/Objection-Youtube#readme",
+  "dependencies": {
+    "knex": "^0.95.6",
+    "mysql": "^2.18.1",
+    "objection": "^2.2.15"
+  }
+}
