@@ -22,9 +22,12 @@ async function main() {
                         .insert({ total: 55 });
     console.log(order);
 
+    const orderTotal = await Order.query()
+                                .select('total')
+                                .where('customer_id', '=', customer.id)
+                                .orderBy('total');
     
-
-
+    console.log(orderTotal);
   }
   
   main()
