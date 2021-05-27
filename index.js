@@ -1,20 +1,30 @@
 const Customer = require('./models/customer');
+const Order = require('./models/order');
 const knex = require('./util/database');
 
 async function main() {
     // Delete all persons from the db.
     await Customer.query().delete();
+    await Order.query().delete();
   
     // Insert one row to the database.
-    await Customer.query().insert({
-      name: 'Jennifer Aniston',
-      email: 'ja@gmail.com',
+    const customer = await Customer.query().insert({
+      name: 'Rachel Green',
+      email: 'rg@gmail.com',
     });
   
     // Read all rows from the db.
-    const customer = await Customer.query();
-  
-    console.log(customer);
+    const customerRead = await Customer.query();
+    console.log(customerRead);
+
+    const order = await Customer.relatedQuery('order')
+                        .for(customer.id)
+                        .insert({ total: 55 });
+    console.log(order);
+
+    
+
+
   }
   
   main()
